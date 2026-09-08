@@ -1,5 +1,7 @@
 # NixOS Control ❄️📱
 
+[![Download APK](https://img.shields.io/badge/Download-APK-green?style=for-the-badge&logo=android)](https://github.com/Hmaidouch/NixOS-Control/raw/main/releases/NixOS-Control-v1.0.apk)
+
 **NixOS Control** is a specialized Android remote-control dashboard built with **Kotlin** and **Jetpack Compose**. It allows you to manage your NixOS (or any Linux) machine over the local network with a single tap, using secure SSH connectivity.
 
 Unlike generic terminal apps, NixOS Control provides a dedicated, high-productivity grid of buttons that trigger specific shell commands you define.
