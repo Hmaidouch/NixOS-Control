@@ -7,9 +7,10 @@ Unlike generic terminal apps, NixOS Control provides a dedicated, high-productiv
 ---
 Screenshot :
 
-![](/home/benattia/Downloads/New Folder/New Folder/Screenshot_20260908_235450_com.example.myapplication.jpg)
-![](/home/benattia/Downloads/New Folder/New Folder/Screenshot_20260908_235611_com.example.myapplication.jpg)
-![](/home/benattia/Downloads/New Folder/New Folder/Screenshot_20260908_235622_com.example.myapplication.jpg)
+<img height="550" src="/home/benattia/Downloads/New Folder/New Folder/Screenshot_20260908_235450_com.example.myapplication.jpg" width="250"/>
+<img height="550" src="/home/benattia/Downloads/New Folder/New Folder/Screenshot_20260908_235611_com.example.myapplication.jpg" width="250"/>
+<img height="550" src="/home/benattia/Downloads/New Folder/New Folder/Screenshot_20260908_235622_com.example.myapplication.jpg" width="250"/>
+
 
 ## 🚀 Key Features
 
