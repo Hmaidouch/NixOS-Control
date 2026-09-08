@@ -12,11 +12,12 @@
 - **Smart Host Resolution:** Supports `.local` (mDNS) hostnames for easier connectivity.
 
 ## Screenshots
-<img width="1200" height="2640" alt="Screenshot_20260908_235622_com example myapplication" src="https://github.com/user-attachments/assets/8baacee9-efa3-44b2-a368-c0941235877f" />
-<img width="1200" height="2640" alt="Screenshot_20260908_235611_com example myapplication" src="https://github.com/user-attachments/assets/c7bec5cb-72a5-4aca-9e8a-a9dfda28407d" />
 
-<img width="1200" height="2640" alt="Screenshot_20260908_235450_com example myapplication" src="https://github.com/user-attachments/assets/be79654f-d9dc-4837-93b2-23ca82f6fd42" />
+<img width="200" height="440" alt="Screenshot_20260908_235450_com example myapplication" src="https://github.com/user-attachments/assets/be79654f-d9dc-4837-93b2-23ca82f6fd42" />
 
+<img width="200" height="440" alt="Screenshot_20260908_235611_com example myapplication" src="https://github.com/user-attachments/assets/c7bec5cb-72a5-4aca-9e8a-a9dfda28407d" />
+
+<img width="200" height="440" alt="Screenshot_20260908_235622_com example myapplication" src="https://github.com/user-attachments/assets/8baacee9-efa3-44b2-a368-c0941235877f" />
 
 ## Getting Started
 
