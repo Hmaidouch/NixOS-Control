@@ -1,92 +1,76 @@
-# NixOS Control ❄️📱
+# Linux Remote Control 🐧📱
 
 [![Download APK](https://img.shields.io/badge/Download-APK-green?style=for-the-badge&logo=android)](https://github.com/Hmaidouch/NixOS-Control/raw/main/releases/NixOS-Control-v1.0.apk)
 
-**NixOS Control** is a specialized Android remote-control dashboard built with **Kotlin** and **Jetpack Compose**. It allows you to manage your NixOS (or any Linux) machine over the local network with a single tap, using secure SSH connectivity.
+**Linux Remote Control** is a clean, modern Android dashboard designed to control **any Linux distribution** (NixOS, Ubuntu, Arch, Fedora, Debian, etc.) over a local network via SSH. 
 
-Unlike generic terminal apps, NixOS Control provides a dedicated, high-productivity grid of buttons that trigger specific shell commands you define.
+While it was originally developed for NixOS, it works perfectly with any Linux machine—all you need is a running SSH server.
 
 ---
-## Screenshot :
+## Screenshots :
 
-<img width="220" height="484" alt="Screenshot_20260908_235622_com example myapplication" src="https://github.com/user-attachments/assets/a76b92db-cc06-4525-b5a4-13f7ff6c207b" />
-
-<img width="220" height="484" alt="Screenshot_20260908_235611_com example myapplication" src="https://github.com/user-attachments/assets/a96316c1-d1fc-4769-b9ad-bd0273f63a8a" />
-
-<img width="220" height="484" alt="Screenshot_20260908_235450_com example myapplication" src="https://github.com/user-attachments/assets/c35dfb63-023c-4716-a046-585a08f067e1" />
+<div align="center">
+  <img width="220" alt="Dashboard" src="https://github.com/user-attachments/assets/c35dfb63-023c-4716-a046-585a08f067e1" />
+  <img width="220" alt="Settings" src="https://github.com/user-attachments/assets/a96316c1-d1fc-4769-b9ad-bd0273f63a8a" />
+  <img width="220" alt="Control" src="https://github.com/user-attachments/assets/a76b92db-cc06-4525-b5a4-13f7ff6c207b" />
+</div>
 
 ## 🚀 Key Features
 
-### 🛠️ Fully Dynamic Dashboard
-- **Add, Edit, & Delete:** Create buttons for any command directly within the app.
-- **2-Column Grid Layout:** Optimized UI for quick access to multiple controls.
-- **Persistent Storage:** All custom actions are saved in a local **Room Database**.
+### 🛠️ Universal Linux Compatibility
+- **Works with any Distro:** Whether it's a powerful NixOS workstation, an Ubuntu laptop, or a Raspberry Pi server.
+- **Dynamic Dashboard:** Add, edit, and delete buttons for any command directly from the app interface.
+- **2-Column Grid:** Optimized UI for quick access to multiple controls.
+
+### ⚡ Smart Execution
+- **Sudo Integration:** Automatically handles privileged commands by securely piping passwords to `sudo -S`.
+- **Customizable Actions:** Create buttons for anything: Shutdown, Volume control, Service restarts, or custom shell scripts.
+- **Zero Latency:** Commands are executed instantly over your local Wi-Fi.
 
 ### 🔒 Security & Privacy
-- **Encrypted Storage:** SSH and Sudo credentials are encrypted at rest using **Android Keystore** via `EncryptedSharedPreferences`.
-- **Zero Cloud Dependency:** Works 100% offline on your local Wi-Fi. No accounts, no data collection.
-- **Sudo Integration:** Handles privileged commands automatically by securely piping passwords to `sudo -S`.
-
-### ⚙️ Advanced Connectivity
-- **mDNS Support:** Connect using hostnames like `nixos.local` instead of tracking dynamic IPs.
-- **Modern Cryptography:** Includes **BouncyCastle** support for high-security SSH key exchanges (like X25519).
-- **Custom Icons:** Assign meaningful icons (Power, Wifi, Terminal, etc.) to your custom buttons.
-
----
-
-## 🛠️ Tech Stack
-
-- **UI:** Jetpack Compose (Material 3)
-- **Architecture:** MVVM (Model-View-ViewModel)
-- **Database:** Room Persistence Library
-- **Networking:** SSHJ + BouncyCastle
-- **Storage:** Jetpack Security (Crypto)
-- **Asynchrony:** Kotlin Coroutines & StateFlow
+- **Encrypted Credentials:** SSH and Sudo passwords are encrypted at rest using **Android Keystore** via `EncryptedSharedPreferences`.
+- **Local Network Only:** Communication happens strictly on your local network. No cloud, no telemetry, no tracking.
+- **Modern Cryptography:** Full support for high-security SSH key exchanges (like X25519) via BouncyCastle.
 
 ---
 
 ## 📦 Getting Started
 
-### 1. NixOS Configuration
-Enable SSH and ensure your user has appropriate permissions in your `configuration.nix`:
+### 1. Prepare your Linux Machine
+The only requirement is a running SSH server.
 
-```nix
-{ config, pkgs, ... }: {
-  # Enable OpenSSH
-  services.openssh.enable = true;
-
-  # Open Firewall
-  networking.firewall.allowedTCPPorts = [ 22 ];
-
-  # Configure User
-  users.users.your_user = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
-  };
-}
+**For Ubuntu/Debian:**
+```bash
+sudo apt update && sudo apt install openssh-server
 ```
 
-### 2. App Configuration
-1. Install the **Release APK**.
+**For Arch Linux:**
+```bash
+sudo pacman -S openssh && sudo systemctl enable --now sshd
+```
+
+**For NixOS:**
+Add this to your `configuration.nix`:
+```nix
+services.openssh.enable = true;
+networking.firewall.allowedTCPPorts = [ 22 ];
+```
+
+### 2. App Setup
+1. Download and install the [Release APK](https://github.com/Hmaidouch/NixOS-Control/raw/main/releases/NixOS-Control-v1.0.apk).
 2. Tap the **Settings (⚙️)** icon.
-3. Enter your PC's Host (e.g., `192.168.1.5` or `nixos.local`), Username, and Password.
+3. Enter your PC's IP (or `.local` hostname), Username, and Password.
 4. Save and use the **Test Connection** button to verify.
 
 ---
 
-## 📂 Project Structure
-
-```text
-app/src/main/java/com/example/myapplication/
-├── model/        # Room Entities, DAOs, and Data Classes
-├── repository/   # Data handling and SSH orchestration
-├── ssh/          # SSH Client implementation and Security Helpers
-├── ui/           # Compose Screens and Themes
-└── viewmodel/    # UI logic and state management
-```
-
-## 📜 License
-This project is open-source and intended for personal use.
+## 🛠️ Tech Stack
+- **Language:** Kotlin
+- **UI Framework:** Jetpack Compose (Material 3)
+- **Database:** Room Persistence Library
+- **Networking:** SSHJ + BouncyCastle
+- **Security:** Jetpack Security (Crypto)
+- **Architecture:** MVVM (Model-View-ViewModel)
 
 ---
-*Developed for the NixOS community with ❤️.*
+*Empowering Linux users to control their world, one tap at a time.*
