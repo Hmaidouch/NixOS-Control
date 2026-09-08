@@ -5,6 +5,11 @@
 Unlike generic terminal apps, NixOS Control provides a dedicated, high-productivity grid of buttons that trigger specific shell commands you define.
 
 ---
+Screenshot :
+
+![](/home/benattia/Downloads/New Folder/New Folder/Screenshot_20260908_235450_com.example.myapplication.jpg)
+![](/home/benattia/Downloads/New Folder/New Folder/Screenshot_20260908_235611_com.example.myapplication.jpg)
+![](/home/benattia/Downloads/New Folder/New Folder/Screenshot_20260908_235622_com.example.myapplication.jpg)
 
 ## 🚀 Key Features
 
