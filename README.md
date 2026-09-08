@@ -6,6 +6,9 @@ Unlike generic terminal apps, NixOS Control provides a dedicated, high-productiv
 
 ---
 Screenshot :
+<img width="250" height="550" alt="Screenshot_20260908_235622_com example myapplication" src="https://github.com/user-attachments/assets/a76b92db-cc06-4525-b5a4-13f7ff6c207b" />
+<img width="250" height="550" alt="Screenshot_20260908_235611_com example myapplication" src="https://github.com/user-attachments/assets/a96316c1-d1fc-4769-b9ad-bd0273f63a8a" />
+<img width="250" height="550" alt="Screenshot_20260908_235450_com example myapplication" src="https://github.com/user-attachments/assets/c35dfb63-023c-4716-a046-585a08f067e1" />
 
 ## 🚀 Key Features
 
